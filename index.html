@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pos">
+        <div class="pos__menu">
+            <div class="pos__name">
+                <div>
+                    <h1>Tên quán ở đây</h1>
+                    <p>33 Xô Viết Nghệ Tĩnh, Hải Châu, Đà Nẵng</p>
+                </div>
+                <button id="pos__show-popup">
+                    Chỉnh sửa thông tin
+                </button>
+            </div>
+            <!-- end pos__name -->
+            <div class="pos__list-item">
+                <ul class="pos__list-item--ul">
+                    <li class="pos__list-item--li">
+                        <button class="active">Tất cả sản phẩm</button>
+                    </li>
+                    <li class="pos__list-item--li">
+                        <button>Thức ăn</button>
+                    </li>
+                    <li class="pos__list-item--li">
+                        <button>Trà sữa</button>
+                    </li>
+                </ul>
+                <!-- end pos__list-item--ul -->
+                <ul class="pos__list-items">
+                    <li class="pos__list-item--list active">
+                        <div class="pos__item">
+                            <h3>Grilled Corn</h3>
+                            <span>150g</span>
+                            <div class="pos__item--details">
+                                <div class="pos__item--price">
+                                    $1.75$
+                                </div>
+                                <div class="pos__item--img">
+                                    <img src="./images/DauEp.png" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end pos__item-->
+                    </li>
+                    <li class="pos__list-item--list pos__list-item--food">
+                        Đây là thức ăn
+                    </li>
+                    <li class="pos__list-item--list pos__list-item--drinks">
+                        Đây là trà sữa
+                    </li>
+                </ul>
+                <!-- end pos__list-items -->
+            </div>
+        </div>
+        <!-- end pos__menu -->
+        <div class="pos__bill">
+            <div class="pos__current-order">
+                <h2>Hóa đơn hiện tại</h2>
+                <button id='deleteBill'>Xóa hết</button>
+            </div>
+            <!-- end pos__current-order-->
+            <div class="pos__render-bill">
+                <!-- render item here -->
+                <p>Hóa đơn trống</p>
+            </div>
+            <div class="pos__receipt">
+                <div class="pos__receipt-line">
+                    <p>Tổng giá sản phẩm</p>
+                    <p id='totalPrice'>0 VND</p>
+                </div>
+                <div class="pos__receipt-line">
+                    <p>Giảm giá</p>
+                    0 VND
+                </div>
+                <div class="pos__receipt-line">
+                    <p>Phí ship</p>
+                    <div><input type="number" value="0" id="shipping-fee"> VND</div>
+                </div>
+                <div class="pos__receipt-line--lg">
+                    <p>Tổng hóa đơn</p>
+                    <p id='finalPrice'>0 VND</p>
+                </div>
+            </div>
+            <button class="pos__submit">
+                Đã thanh toán
+            </button>
+        </div>
+        <!-- end pos__bill -->
+    </div>
+    <!-- end pos -->
+
+    <div class="black-bg">
+    </div>
+
+    <div class="data-table">
+        <div class="data-table__header">
+            <h1>Admin</h1>
+            <button id="data-table__close">X</button>
+        </div>
+        <div class="data-table__wrapper">
+            <div class="data-table__line">
+                <div class="data-table__stt">STT</div>
+                <div class="data-table__id">Id sản phẩm</div>
+                <div class="data-table__name">Tên sản phẩm</div>
+                <div class="data-table__price">Giá</div>
+                <div class="data-table__discount">Chiết khấu</div>
+                <div class="data-table__status">Thao tác</div>
+            </div>
+            <div class="data-table__line--body">
+                <div class="data-table__line">
+                    <div class="data-table__stt">1</div>
+                    <div class="data-table__id">1</div>
+                    <div class="data-table__name">
+                        <img src="./images/Khoaimon.png" alt="">
+                        <p>Trà sữa trân châu thái</p>
+                    </div>
+                    <div class="data-table__price">
+                        <input type="number"> vnd
+                    </div>
+                    <div class="data-table__discount">
+                        <input type="number" > %
+                    </div>
+                    <div class="data-table__status">
+                        <button>Lưu chỉnh sửa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <script src="POS.js"></script>
+    <script src="dataTable.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
