@@ -1,5 +1,6 @@
 const btnList = document.querySelectorAll('.pos__list-item--li button');
 const pageList = document.querySelectorAll('.pos__list-item--list');
+const listItemsSearch = document.querySelector('.pos__list-item--search');
 // console.log(btnList,pageList);
 
 // ĐỔI TRẠNG THÁI ACTIVE CHO CÁC NÚT
@@ -11,6 +12,7 @@ for (let i = 0; i < btnList.length; i++) {
             btnList[i].classList.remove('active');
             pageList[i].classList.remove('active');
             pageList[i].classList.remove('animation');
+            listItemsSearch.classList.remove('active');
         }
         // chỉ add active class cho button được nhấn
         btnList[i].classList.add('active');
@@ -37,6 +39,23 @@ closeBtn.addEventListener('click', () => {
     blackBg.classList.remove('active');
     dataTable.classList.remove('active');
 });
+
+// Tắt/mở cái popup thanh toán ở màn hình <992px
+const menuBtn = document.querySelector('.pos__btn--hidden');
+const popupBill = document.querySelector('.pos__bill');
+const closeBill = document.querySelector('.pos__close-menu');
+menuBtn.addEventListener('click', () => {
+    popupBill.classList.remove('inactive');
+    popupBill.classList.add('active');
+});
+closeBill.addEventListener('click', () => {
+    popupBill.classList.add('inactive');
+    setTimeout(()=>{
+        if(popupBill.classList.contains('inactive')){
+            popupBill.classList.remove('active');
+        }
+    },500)
+})
 
 
 

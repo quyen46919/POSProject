@@ -1,8 +1,5 @@
 
 
-// Chức năng thay đổi thông tin sản phẩm
-
-
 // Hiển thị bảng thông tin sản phẩm
 const dataTableRenderDiv = document.querySelector('.data-table__line--body');
 function renderListOfItemTable(arr) {
@@ -34,10 +31,6 @@ function renderListOfItemTable(arr) {
             e.preventDefault();
             let newPrice = submitBtns[i].parentElement.parentElement
             .querySelector('#data-table__price').value;
-            // let newName = submitBtns[i].parentElement.parentElement
-            // .querySelector('.data-table__line--body .data-table__name').innerText;
-            // let newImage = submitBtns[i].parentElement.parentElement
-            // .querySelector('.data-table__line .data-table__image').src;
             let newDiscount = submitBtns[i].parentElement.parentElement
             .querySelector('#data-table__discount').value;
             console.log(newPrice, newDiscount);
@@ -46,4 +39,14 @@ function renderListOfItemTable(arr) {
         
     }
 }
-renderListOfItemTable(Menu);
+const updateInfoOfItem = (index, newPrice, newDiscount) => {
+    console.log("index = ", index)
+    const targetedItem = Menu.find(item => item.id == index);
+    targetedItem.price = newPrice;
+    targetedItem.discount = newDiscount;
+    updateListOfItems(targetedItem);
+
+    // rerender
+    render();
+    console.log(Menu);
+}

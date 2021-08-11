@@ -37,7 +37,7 @@ body{
     font-family: 'Nunito', sans-serif;
 }
 ul { list-style: none }
-p { color: var(--black) }
+p { color: var(--black);}
 h3 { color: var(--title-color) }
 input{
     width: 100px;
@@ -81,21 +81,29 @@ input{
         display: flex;
         justify-content: space-between;
     }
-    .pos__name button{
-        width: auto!important;
-        height: 50px!important;
-        background-color: var(--light-pink)!important;
-        color: var(--pink);
-        border: none;
-        transition: var(--transition);
-        border-radius: var(--border-radius-3);
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-    }
-    .pos__name button:hover{
-        background-color: var(--pink-2)!important;
-        color: var(--white)!important;
-    }
+        .pos__btn{
+            display: flex;
+            gap: 1rem;
+        }
+            .pos__name button{
+                width: auto!important;
+                height: 50px!important;
+                background-color: var(--light-pink)!important;
+                color: var(--pink);
+                border: none;
+                transition: var(--transition);
+                border-radius: var(--border-radius-3);
+                cursor: pointer;
+                padding: 0.5rem 1rem;
+            }
+            .pos__name button:hover{
+                background-color: var(--pink-2)!important;
+                color: var(--white)!important;
+            }
+            button.pos__btn--hidden {
+                display: none;
+            }
+            
     .pos__list-item{
         flex : 9;
         width: 100%;
@@ -125,6 +133,16 @@ input{
                 .pos__list-item--li button:hover{
                     background-color: var(--orange);
                     color: var(--white);
+                }
+                .pos__list-item--input{
+                    width: 400px;
+                    padding: 0 1rem;
+                    text-align: left;
+                    border-radius: 10px;
+                    font-size: 15px;
+                }
+                .pos__list-item--input::placeholder{
+                    font-size: 15px;
                 }
         .pos__list-items{
             width: 100%;
@@ -241,6 +259,9 @@ input{
         background-color: var(--light-pink)!important;
         transition: var(--transition);
     }
+    button.pos__close-menu {
+        display: none;
+    }
     .pos__current-order button:hover{
         background: var(--pink-2)!important;
         color: var(--white)!important;
@@ -323,6 +344,10 @@ input{
                 justify-content: flex-end;
                 margin-right: 0.5rem;
                 font-weight: 900;
+            }
+            .pos__discount{
+                width: auto;
+                text-align: left;
             }
     .pos__receipt{
         height: auto;
@@ -421,6 +446,9 @@ input{
 .data-table button:hover, .edit-item button:hover{
     background: var(--pink-2)!important;
     color: var(--white);
+}
+.data-table__line--hidden{
+    display: none;
 }
     .data-table__header{
         height: 40px;

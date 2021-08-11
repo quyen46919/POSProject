@@ -9,18 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <div class="pos">
         <div class="pos__menu">
             <div class="pos__name">
                 <div>
-                    <h1>Tên quán ở đây</h1>
+                    <h1>Sunny Food And Milktea</h1>
                     <p>33 Xô Viết Nghệ Tĩnh, Hải Châu, Đà Nẵng</p>
                 </div>
-                <button id="pos__show-popup">
-                    Chỉnh sửa thông tin
-                </button>
+                <div class="pos__btn">
+                    <button class="pos__btn--hidden">
+                        Thanh toán
+                    </button>
+                    <button id="pos__show-popup">
+                        Chỉnh sửa thông tin
+                    </button>
+                </div>
             </div>
             <!-- end pos__name -->
             <div class="pos__list-item">
@@ -28,36 +34,26 @@
                     <li class="pos__list-item--li">
                         <button class="active">Tất cả sản phẩm</button>
                     </li>
-                    <li class="pos__list-item--li">
+                    <!-- <li class="pos__list-item--li">
                         <button>Thức ăn</button>
                     </li>
                     <li class="pos__list-item--li">
                         <button>Trà sữa</button>
-                    </li>
+                    </li> -->
+                    <input type="text" class="pos__list-item--input" placeholder="Nhập tên sản phẩm">
                 </ul>
                 <!-- end pos__list-item--ul -->
                 <ul class="pos__list-items">
                     <li class="pos__list-item--list active">
-                        <div class="pos__item">
-                            <h3>Grilled Corn</h3>
-                            <span>150g</span>
-                            <div class="pos__item--details">
-                                <div class="pos__item--price">
-                                    $1.75$
-                                </div>
-                                <div class="pos__item--img">
-                                    <img src="./images/DauEp.png" alt="img">
-                                </div>
-                            </div>
-                        </div>
+                        ĐANG TẢI DỮ LIỆU.... 
                         <!-- end pos__item-->
                     </li>
-                    <li class="pos__list-item--list pos__list-item--food">
-                        Đây là thức ăn
+                    <li class="pos__list-item--list pos__list-item--search">
+                        Không có sản phẩm phù hợp
                     </li>
-                    <li class="pos__list-item--list pos__list-item--drinks">
+                    <!-- <li class="pos__list-item--list pos__list-item--drinks">
                         Đây là trà sữa
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- end pos__list-items -->
             </div>
@@ -66,7 +62,10 @@
         <div class="pos__bill">
             <div class="pos__current-order">
                 <h2>Hóa đơn hiện tại</h2>
-                <button id='deleteBill'>Xóa hết</button>
+                <div class="pos__btn">
+                    <button id='deleteBill'>Xóa hết</button>
+                    <button class="pos__close-menu">Tắt menu</button>
+                </div>
             </div>
             <!-- end pos__current-order-->
             <div class="pos__render-bill">
@@ -80,7 +79,7 @@
                 </div>
                 <div class="pos__receipt-line">
                     <p>Giảm giá</p>
-                    0 VND
+                    <div class="pos__discount">0 VND</div>
                 </div>
                 <div class="pos__receipt-line">
                     <p>Phí ship</p>
@@ -135,9 +134,19 @@
                     </div>
                 </div>
             </div>
+            <div class="data-table__line--hidden">
+                Vui lòng sử dụng desktop để sử dụng chức năng này!
+            </div>
         </div>
     </div>   
 
+    <!-- JAVASCRIPT LINK -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>     
+
+
+    <script src="firebaseConfig.js"></script>
     <script src="POS.js"></script>
     <script src="dataTable.js"></script>
     <script src="index.js"></script>
